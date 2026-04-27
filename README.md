@@ -38,8 +38,12 @@ python app/file_crypto.py decrypt secret.enc secret.dec.txt
 cat secret.dec.txt
 ```
 **Que se passe-t-il si on modifie un octet du fichier chiffré ?**  
+
+Lorsqu'on modifie un octet du fichier chiffré, le déchiffrement echoue avec une erreur
  
-**Pourquoi ne faut-il pas commiter la clé dans Git ?**   
+**Pourquoi ne faut-il pas commiter la clé dans Git ?**  
+ 
+Parce que le clé sera exposée publiquement et elle va perdre sa sécurité
 
 ## 5) Atelier 1 :
 Dans cet atelier, la clé Fernet n'est plus générée dans le code mais stockée dans un Repository Secret Github. Ecrivez un nouveau programme **python app/fernet_atelier1.py** qui utilisera une clé Fernet caché dans un Secret GitHub pour encoder et décoder vos fichiers.
